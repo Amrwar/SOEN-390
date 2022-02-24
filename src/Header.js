@@ -1,36 +1,42 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import GoogleAuth from './Components/GoogleAuth';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import theme from './Components/Theme';
+import {ThemeProvider} from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button'
 
-const Header = ()=> {
+
+export default function Header (props) {
 
     return(
-
-        <div className="ui menu ">
-        <div className="item ">
-        <div class="ui button">
+ 
+      <AppBar position="fixed" color="secondary"> 
+      <Toolbar>
+     
+        <div className="ui button">
         <Link to="/" className=" item">
                Homepage
                 </Link>
       </div>
-            <div class="item">
-    <div class="ui button"><Link to="/Login" className="item">
+            <div className="item">
+    <div className="ui button"><Link to="/Login" className="item">
                Login
                 </Link>
                 </div>
   </div>
-  <div class="item">
-    <div class="ui button"><Link to ="/Signup" className="item">
+  <div className="item">
+    <div className="ui button"><Link to ="/Signup" className="item">
             Signup
         </Link>
     </div>
   </div>
-  
+
   <GoogleAuth/>
-</div>
-</div>
 
-
+</Toolbar>
+    </AppBar>
     );
 };
-export default Header;

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
+import Button from '@material-ui/core/Button'
 
 
 
@@ -57,8 +58,14 @@ render(){
 
             <Link to ="/BlankPage">
             <center>
-<button className="ui button primary">Login</button>   
-</center>
+            <Button
+ onClick={(() => console.log('you clicked me'))}
+     type="submit"
+     color="secondary"
+     variant="contained"
+     >
+         Login
+ </Button></center>
 </Link>
              </form>
              </div>
